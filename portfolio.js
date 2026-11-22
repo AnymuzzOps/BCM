@@ -3,8 +3,8 @@ const projects = [
     name: 'M&R Consultores',
     category: 'Página web corporativa',
     description: 'Sitio web corporativo desarrollado para una empresa de asesoría contable, tributaria y laboral, con un diseño profesional, navegación intuitiva y acceso a sus servicios.',
-    image: null,
-    imageAlt: 'Captura del encabezado y la portada de M&R Consultores',
+    image: './images/myr-consultores.webp',
+    imageAlt: 'Captura completa del sitio de M&R Consultores',
     url: 'https://myrconsultores.cl/'
   }
 ];
@@ -30,17 +30,23 @@ for (const project of projects) {
   fallback.textContent = new URL(project.url).hostname;
 
   if (project.image) {
-    const preview = card.querySelector('.project-preview');
+    const preview = card.querySelector('.preview-scroll');
+    const hint = card.querySelector('.preview-hint');
     const image = document.createElement('img');
     image.alt = project.imageAlt;
-    image.width = 1280;
-    image.height = 720;
+    image.width = 1895;
+    image.height = 6637;
     image.loading = 'lazy';
     image.decoding = 'async';
     image.className = 'pending';
     image.addEventListener('load', () => {
       image.classList.remove('pending');
       fallback.hidden = true;
+      preview.tabIndex = 0;
+      preview.setAttribute('role', 'region');
+      preview.setAttribute('aria-label', `Vista previa desplazable de ${project.name}`);
+      hint.hidden = false;
+      preview.addEventListener('scroll', () => hint.classList.add('dismissed'), { once: true, passive: true });
     }, { once: true });
     image.addEventListener('error', () => image.remove(), { once: true });
     image.src = project.image;

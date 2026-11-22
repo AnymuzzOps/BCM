@@ -71,20 +71,20 @@
   </footer>
 
   <template id="project-template">
-    <article>
-      <a class="project-card" target="_blank" rel="noopener noreferrer">
-        <div class="project-preview">
-          <span class="preview-fallback">myrconsultores.cl</span>
-        </div>
-        <div class="project-details">
-          <p class="category"></p>
-          <h3></h3>
-          <p class="project-description muted"></p>
-          <span class="project-cta">Visitar sitio web
-            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13 5h6v6m0-6-9 9m0-8H6a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4"/></svg>
-          </span>
-        </div>
-      </a>
+    <article class="project-card">
+      <div class="project-preview">
+        <span class="preview-fallback">myrconsultores.cl</span>
+        <div class="preview-scroll"></div>
+        <span class="preview-hint" aria-hidden="true" hidden>Desliza para explorar ↓</span>
+      </div>
+      <div class="project-details">
+        <p class="category"></p>
+        <h3></h3>
+        <p class="project-description muted"></p>
+        <a class="project-cta" target="_blank" rel="noopener noreferrer">Visitar sitio web
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13 5h6v6m0-6-9 9m0-8H6a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4"/></svg>
+        </a>
+      </div>
     </article>
   </template>
 </body>
