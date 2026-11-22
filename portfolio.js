@@ -19,7 +19,7 @@ const projectList = document.querySelector('#project-list');
 const projectTemplate = document.querySelector('#project-template');
 
 for (const project of projects) {
-  const card = projectTemplate.content.cloneNode(true);
+  const card = document.importNode(projectTemplate.content, true);
   const link = card.querySelector('a');
   link.href = project.url;
   link.setAttribute('aria-label', `Visitar sitio web de ${project.name} (abre en otra pestaña)`);
@@ -80,8 +80,10 @@ if (contactLinks.childElementCount) {
 
 const navLinks = [...document.querySelectorAll('nav a')];
 const sections = navLinks.map(link => document.querySelector(link.hash));
+const header = document.querySelector('.header');
 
 function updateNavigation() {
+  header.classList.toggle('is-scrolled', window.scrollY > 12);
   const distanceToEnd = document.documentElement.scrollHeight - window.scrollY - window.innerHeight;
   const current = window.scrollY > 0 && distanceToEnd < 2
     ? sections.at(-1)
@@ -107,5 +109,5 @@ if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: re
       observer.unobserve(entry.target);
     }
   }, { threshold: 0.12 });
-  document.querySelectorAll('.intro, .project-card, .about, .contact > div').forEach(element => reveal.observe(element));
+  document.querySelectorAll('.intro, .service-grid, .project-card, .about, .contact > div').forEach(element => reveal.observe(element));
 }
