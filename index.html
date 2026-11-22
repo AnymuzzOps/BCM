@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111F">
+  <meta name="description" content="Portafolio de Benjamín Corrales Mira, desarrollador de páginas web modernas y funcionales para negocios y profesionales.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:title" content="Benjamín Corrales Mira · Desarrollo web">
+  <meta property="og:description" content="Conoce mis proyectos de desarrollo web y mi trabajo con negocios y profesionales.">
+  <title>Benjamín Corrales Mira · Desarrollo web</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./portfolio.js"></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true">B</span>Benjamín Corrales Mira</a>
+      <nav aria-label="Navegación principal">
+        <a href="#inicio" aria-current="location">Inicio</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido">
+    <section id="inicio" class="hero" aria-labelledby="titulo">
+      <div class="wrap hero-inner">
+        <h1 id="titulo">Hola, soy <span>Benjamín Corrales Mira.</span></h1>
+        <p class="lead">Desarrollo páginas web modernas, funcionales y adaptadas a cada negocio.</p>
+        <p class="muted">Transformo ideas en experiencias digitales, combinando diseño, tecnología y funcionalidad.</p>
+        <div class="actions">
+          <a class="button primary" href="#proyectos">Ver proyectos</a>
+          <a class="button secondary" href="#contacto">Contáctame</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos" class="section projects" aria-labelledby="proyectos-titulo">
+      <div class="wrap">
+        <div class="intro">
+          <h2 id="proyectos-titulo">Mis proyectos</h2>
+          <p class="muted">Una selección de páginas web que he desarrollado, enfocadas en ofrecer experiencias digitales modernas y funcionales.</p>
+        </div>
+        <div id="project-list" class="project-list"></div>
+        <noscript><p><a href="https://myrconsultores.cl/" target="_blank" rel="noopener noreferrer">Visitar M&amp;R Consultores (abre en otra pestaña)</a></p></noscript>
+      </div>
+    </section>
+
+    <section id="sobre-mi" class="section" aria-labelledby="sobre-titulo">
+      <div class="wrap about">
+        <h2 id="sobre-titulo">Sobre mí</h2>
+        <p class="muted">Soy Benjamín Corrales Mira, apasionado por el desarrollo web y la creación de soluciones digitales. Mi objetivo es ayudar a negocios y profesionales a construir una presencia online moderna, atractiva y funcional.</p>
+      </div>
+    </section>
+
+    <section id="contacto" class="section contact" aria-labelledby="contacto-titulo">
+      <div class="wrap">
+        <h2 id="contacto-titulo">¿Tienes un proyecto en mente?</h2>
+        <p class="muted">Hablemos de tu idea y trabajemos juntos para llevarla al mundo digital.</p>
+        <div id="contact-links" class="actions" hidden></div>
+        <p id="contact-status" class="contact-status">Canales de contacto disponibles próximamente.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">© 2026 Benjamín Corrales Mira. Todos los derechos reservados.</div>
+  </footer>
+
+  <template id="project-template">
+    <article>
+      <a class="project-card" target="_blank" rel="noopener noreferrer">
+        <div class="project-preview">
+          <span class="preview-fallback">myrconsultores.cl</span>
+        </div>
+        <div class="project-details">
+          <p class="category"></p>
+          <h3></h3>
+          <p class="project-description muted"></p>
+          <span class="project-cta">Visitar sitio web
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M13 5h6v6m0-6-9 9m0-8H6a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4"/></svg>
+          </span>
+        </div>
+      </a>
+    </article>
+  </template>
+</body>
+</html>
